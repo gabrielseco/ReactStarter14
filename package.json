@@ -1,0 +1,40 @@
+{
+  "name": "react14",
+  "version": "1.0.0",
+  "description": "Starter for using react 0.14",
+  "main": "main.js",
+  "dependencies": {
+    "axios": "^0.7.0",
+    "babel-preset-react": "^6.1.2",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-webpack": "^1.0.11",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.7",
+    "history": "^1.13.0",
+    "load-grunt-tasks": "^3.3.0",
+    "node-sass": "^3.4.1",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2",
+    "react-router": "^1.0.0-rc4",
+    "redux": "^3.0.4",
+    "sass-loader": "^3.1.1",
+    "url-loader": "^0.5.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.1.2",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.1.2",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Gabriel García",
+  "license": "ISC"
+}
