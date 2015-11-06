@@ -1,7 +1,8 @@
 import React from 'react';
+import {Link} from 'react-router';
 
 export default class App extends React.Component {
   render() {
-    return <h1>Learn Webpack</h1>;
+    return <Link to="prueba">Learn Webpack</Link>;
   }
 }

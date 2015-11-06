@@ -1,45 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Router from 'react-router';
+import { render } from 'react-dom'
+import { Router, Route} from 'react-router'
 import App from './App.jsx';
 
-main();
 
-function main() {
+try {
 
-  ReactDOM.render(<App />, document.getElementById('app'));
+  require('../styles/main.scss');
 
-}
-
-/*try {
-
-    //require('../../styles/main.scss');
-
-    //const flux = new AppFlux();
-
-    const Route = Router.Route,
-        DefaultRoute = Router.DefaultRoute;
-
-    var Interfaces = (
-      <Route name="home" path="/" handler={App}>
-        <DefaultRoute handler={App} />
-
+  render((
+    <Router>
+      <Route path="/" component={App}>
       </Route>
-    );
-
-    Router.run(Interfaces, function (Handler) {
-        React.render(<Handler />, document.body);
-    });
+      <Route path="prueba" component={App}>
+      </Route>
+    </Router>
+  ), document.getElementById('app'))
 } catch(e) {
-    ReactDOM.render(
-        <div>
-            <h2>Error: application could not load</h2>
-            <pre>
-                <strong>{e.toString()}</strong>
-                {!!e.stack && (<div><br />{e.stack}</div>)}
-            </pre>
-        </div>, document.body
-    );
+  ReactDOM.render(
+    <div>
+    <h2>Error: application could not load</h2>
+    <pre>
+    <strong>{e.toString()}</strong>
+    {!!e.stack && (<div><br />{e.stack}</div>)}
+    </pre>
+    </div>, document.body
+  );
 
-    throw e;
-}*/
+  throw e;
+}
