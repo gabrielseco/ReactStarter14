@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux'
 import films from './films'
+import TV from './tv'
 
-const filmsReducer = combineReducers({
-  films
+const combinedReducer = combineReducers({
+  films,TV
 })
 
-export default filmsReducer
+export default combinedReducer

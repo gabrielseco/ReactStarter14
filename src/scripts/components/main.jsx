@@ -8,6 +8,7 @@ import configureStore from '../store/configureStore'
 
 import App from './Interfaces/App.jsx';
 import Films from './Interfaces/Films.jsx';
+import TV from './Interfaces/TV.jsx';
 
 const history = createBrowserHistory();
 
@@ -16,7 +17,7 @@ const store = configureStore()
 try {
 
   require('../styles/main.scss');
-  
+
   render((
     <Provider store={store}>
       <Router history={history}>
@@ -25,7 +26,11 @@ try {
           path="/"
           name="films"
           component={Films}
-          store={store}
+          />
+          <Route
+          path="/tv"
+          name="TV"
+          component={TV}
           />
         </Route>
       </Router>

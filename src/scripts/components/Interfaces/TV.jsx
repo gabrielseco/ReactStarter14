@@ -1,10 +1,10 @@
 import React from 'react';
-import {getAllFilms} from '../../actions'
+import {getAllTV} from '../../actions'
 import { connect } from 'react-redux';
 import ListItem from '../Dumb/ListItem';
 
 
-class Films extends React.Component {
+class TV extends React.Component {
 
   constructor(props) {
     super(props);
@@ -12,17 +12,17 @@ class Films extends React.Component {
   componentDidMount(){
     const {dispatch } = this.props;
 
-    var data = dispatch(getAllFilms());
+    var data = dispatch(getAllTV());
 
   }
 
   render() {
-    const   { films } = this.props
+    const { TV } = this.props
 
-    if(films.length > 0){
-      var list = films.map((film, i) => {
+    if(TV.length > 0){
+      var list = TV.map((TV, i) => {
         return (
-          <ListItem key={film.ID} data={film}/>
+          <ListItem key={TV.ID} data={TV}/>
         );
 
       });
@@ -38,6 +38,6 @@ class Films extends React.Component {
  }
 }
 function mapStateToProps(state) {
-  return { films: state.films }
+  return { TV: state.TV }
 }
-export default connect(mapStateToProps)(Films)
+export default connect(mapStateToProps)(TV)
