@@ -2,20 +2,34 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { render } from 'react-dom'
 import { Router, Route} from 'react-router'
-import App from './Interfaces/App.jsx';
+import createBrowserHistory from 'history/lib/createBrowserHistory';
+import { Provider } from 'react-redux'
+import configureStore from '../store/configureStore'
 
+import App from './Interfaces/App.jsx';
+import Films from './Interfaces/Films.jsx';
+
+const history = createBrowserHistory();
+
+const store = configureStore()
 
 try {
 
   require('../styles/main.scss');
-
+  
   render((
-    <Router>
-      <Route path="/" component={App}>
-      </Route>
-      <Route path="prueba" component={App}>
-      </Route>
-    </Router>
+    <Provider store={store}>
+      <Router history={history}>
+        <Route component={App}>
+          <Route
+          path="/"
+          name="films"
+          component={Films}
+          store={store}
+          />
+        </Route>
+      </Router>
+    </Provider>
   ), document.getElementById('app'))
 } catch(e) {
   ReactDOM.render(
